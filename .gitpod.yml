@@ -16,5 +16,5 @@ tasks:
   - name: VNC server
     openMode: tab-after
     command: |
-      Xvfb :99 -screen 0 1920x1080x30 & sleep 5
+      Xvfb :99 -screen 0 1920x1080x16 & sleep 5
       x11vnc -display :99 -usepw -forever
