@@ -6,3 +6,15 @@
 
 image:
   file: .gitpod/.Dockerfile
+
+tasks:
+  - name: run HTTP server
+    openMode: tab-after
+    command: |
+      python3 -m http.server 8000 --directory /workspace/ServerLibraries/build
+
+  - name: run VNC server
+    openMode: tab-after
+    command: |
+      Xvfb :99 -screen 0 1024x768x16 & sleep 5
+      x11vnc -display :99 -usepw -forever
